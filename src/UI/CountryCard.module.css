@@ -1,0 +1,20 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  height: fit-content;
+  transition: transform 0.3s ease;
+}
+
+.card.hovered {
+  transform: translateY(-15px);
+  transition: transform 0.3s ease;
+}
+
+.image {
+  width: 100%;
+}
+
+p {
+  font-size: large;
+  margin: 10px 0;
+}
