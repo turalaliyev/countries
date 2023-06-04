@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import {
   Card,
   CardMedia,
@@ -15,18 +15,15 @@ import { Link } from "react-router-dom";
 function CountryCard(props) {
   const [darkMode] = useContext(DarkModeContext);
 
-  const [hovered, setHovered] = useState(false);
-
   return (
     <Card
-      className={`${styles.card} ${hovered ? styles.hovered : ""}`}
+      className={`${styles.card}`}
       style={{
         borderRadius: "0.5rem",
         backgroundColor: darkMode ? "#2B3743" : "white",
         color: darkMode ? "white" : "black",
+        transition: "all 0.3s ease",
       }}
-      onMouseEnter={() => setHovered(true)}
-      onMouseLeave={() => setHovered(false)}
     >
       <CardMedia sx={{ height: 140 }} image={props.image} title={props.name} />
       <CardContent>

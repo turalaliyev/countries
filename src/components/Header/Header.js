@@ -4,11 +4,7 @@ import styles from "./Header.module.css";
 import { DarkModeContext } from "../../context";
 
 function Header() {
-  const [darkMode, setDarkMode] = useContext(DarkModeContext);
-
-  function toggleMode() {
-    return setDarkMode(!darkMode);
-  }
+  const [darkMode, toggleMode] = useContext(DarkModeContext);
 
   return (
     <header

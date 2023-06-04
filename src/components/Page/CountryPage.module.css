@@ -20,11 +20,10 @@
 .countryDetails {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 3rem;
 }
 
 .image {
-  width: 100%;
+  width: 85%;
 }
 
 h1 {
@@ -39,20 +38,23 @@ h1 {
 .borders {
   display: flex;
   flex-wrap: wrap;
+  text-overflow: ellipsis;
 }
 
 .bordersElement {
-  background-color: white;
   border: none;
   margin: 0 5px;
   border-radius: 5px;
   font-size: small;
   padding: 9px 27px;
-  box-shadow: 0 0 6px #0d6efd;
 }
 
 @media screen and (max-width: 990px) {
   .countryDetails {
     grid-template-columns: 1fr;
+  }
+
+  .image {
+    width: 100%;
   }
 }

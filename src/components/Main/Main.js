@@ -43,9 +43,15 @@ function Main() {
       setLoading(true);
 
       const response = await axios.get("https://restcountries.com/v3.1/all");
-      setData(sortByName(response.data));
+      setData(
+        sortByName(response.data).filter(
+          (country) => country.name.common !== "Armenia"
+        )
+      );
 
       setLoading(false);
+
+      window.scrollTo();
     };
 
     loadCountries();
@@ -103,6 +109,7 @@ function Main() {
               .map((el) => {
                 return (
                   <CountryCard
+                    id={el.id}
                     key={el.name.official}
                     image={el.flags.png}
                     name={el.name.common}
